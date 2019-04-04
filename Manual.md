@@ -8,11 +8,18 @@ remoto OWGIS desde nuestro equipo local.
    * Herramienta __RSYNC__  
 
 ## Pasos previos
-Debes tener una serie de configuraciones previas que nos permitiran hacer los respaldos de los archivos de manera  
+Se debe tener una serie de configuraciones previas que nos permitiran hacer los respaldos de los archivos de manera  
 automatizada sin que tengamos que supervisar personalmente cada vez que se ejecuta el script.
 
 __Creamos alias al servidor remoto__
 
-   1. Ingresamos al archivo `.ssh`
+   1. Ingresamos al archivo `.ssh/config` para crear el alias de nuestro servidor  
+   ```bash
+   Host servidor_OWGIS  
+   HostName 132.248.xxx.xxx  
+   User user  
+   Port 5543  
+   ```  
+   
    
    
