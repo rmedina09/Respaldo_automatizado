@@ -65,9 +65,9 @@ Estas son las bases de datos que vamos a respaldar que se encuentran en ```home/
   * contingencia
   * datafest
   * db_sms
-	* maincca
-	* pumabus
-	* viajandodf
+  * maincca
+  * pumabus
+  * viajandodf
  
  ## Descripción del Código
    
