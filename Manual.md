@@ -28,7 +28,13 @@ __Creamos un alias del servidor remoto__
       ```ssh-copy-id  -i  ~/.ssh/id_rsa.pub  user@servidor_OWGIS```  
       
    Ahora ya podremos ejecutar el script sin la necesidad de autenticarnos explicitamente.
-   
+
+__Configuracion de nuestro manejador de base de datos__
+
+Para poder generar los respaldos de las bases de datos en necesario que tengamos los permisos necesarios.
+  
+  1. 
+
 ## Lista de archivos a respaldar
 
 A continuación listamos una serie de carpetas que contienen los archivos que necesitamos:
@@ -53,6 +59,15 @@ A continuación listamos una serie de carpetas que contienen los archivos que ne
   * ServerData/GeoserverDataBeatTheBeast/workspaces
   * owgisconfig/ncwms/config.xml
   * owgisconfig/ncwms/palettes
+  
+Estas son las bases de datos que vamos a respaldar que se encuentran en ```home/user/respaldos/BasesDatos/``` :  
+
+  * contingencia
+  * datafest
+  * db_sms
+	* maincca
+	* pumabus
+	* viajandodf
  
  ## Descripción del Código
    
