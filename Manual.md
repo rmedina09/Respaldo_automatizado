@@ -1,4 +1,5 @@
 # Manual para Respaldo Automatizado
+
 El objetivo de este script es automatizar el respaldo de archivos especificos que se encuentran en un servidor  
 remoto OWGIS desde nuestro equipo local.
 
@@ -7,11 +8,11 @@ remoto OWGIS desde nuestro equipo local.
    * Lenguaje __bash__
    * Herramienta __RSYNC__  
 
-## Pasos previos
+## Configuración del ambiente
 Se debe tener una serie de configuraciones previas que nos permitiran hacer los respaldos de los archivos de manera  
 automatizada sin que tengamos que supervisar personalmente cada vez que se ejecuta el script.
 
-__Creamos alias al servidor remoto__
+__Creamos un alias del servidor remoto__
 
    1. Ingresamos al archivo `.ssh/config` para crear el alias de nuestro servidor  
       ```bash
@@ -28,7 +29,34 @@ __Creamos alias al servidor remoto__
       
    Ahora ya podremos ejecutar el script sin la necesidad de autenticarnos explicitamente.
    
-   ## 
+## Lista de archivos a respaldar
+
+A continuación listamos una serie de carpetas que contienen los archivos que necesitamos:
+
+  * var/www/html
+  * ServerScripts
+  * ServerData/OWGIS/Atlas
+  * ServerData/ncWMS_Layers
+  * ServerData/DataFestData
+  * ServerData/GeoserverCenapredLayers
+  * ServerData/GeoserverCenapredData/styles
+  * ServerData/GeoserverCenapredData/workspaces
+  * ServerData/GeoserverLayers
+  * ServerData/GeoserverData/styles
+  * ServerData/GeoserverData/workspaces
+  * ServerData/ViajandoDFData
+  * ServerData/GeoserverViajandoDFData/workspaces
+  * ServerData/GeoserverViajandoDFData/styles
+  * ServerData/GeoserverDataCaro/styles
+  * ServerData/GeoserverDataCaro/workspaces
+  * ServerData/GeoserverDataBeatTheBeast/styles
+  * ServerData/GeoserverDataBeatTheBeast/workspaces
+  * owgisconfig/ncwms/config.xml
+  * owgisconfig/ncwms/palettes
+ 
+ ## Descripción del Código
+   
+   
   
    
    
