@@ -24,7 +24,7 @@ __Creamos alias al servidor remoto__
   ```ssh-keygen -b 4096 -t rsa ```  
   nos genera una llave privada ```id_rsa``` y una llave publica ```id_rsa.pub```  
   
-  Copiamos la llave pública al servidor remoto OWGIS
+  Copiamos la llave pública al servidor remoto OWGIS  
   ```ssh-copy-id  -i  ~/.ssh/id_rsa.pub  user@servidor_OWGIS```
   
   
