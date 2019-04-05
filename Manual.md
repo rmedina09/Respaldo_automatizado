@@ -22,11 +22,13 @@ __Creamos alias al servidor remoto__
       ```  
    2. Creamos nuestras credenciales para poder ingresar al servidor sin la necesidad de autenticarnos explicitamente,  
       generando una llave privada ```id_rsa``` y una llave publica ```id_rsa.pub``` de la siguiente manera :  
-      ```ssh-keygen -b 4096 -t rsa ```  
-     
-     Copiamos la llave pública al servidor remoto OWGIS  
-  ```ssh-copy-id  -i  ~/.ssh/id_rsa.pub  user@servidor_OWGIS```
-  
+      ```ssh-keygen -b 4096 -t rsa```
+      Despues de generar as llaves, copiamos la llave pública al servidor remoto OWGIS:  
+      ```ssh-copy-id  -i  ~/.ssh/id_rsa.pub  user@servidor_OWGIS```  
+      
+   Ahora ya podremos ejecutar el script sin la necesidad de autenticarnos explicitamente.
+   
+   ## 
   
    
    
