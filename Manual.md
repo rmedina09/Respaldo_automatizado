@@ -31,10 +31,14 @@ __Creamos un alias del servidor remoto__
 
 __Configuracion de nuestro manejador de base de datos__
 
-Para poder generar los respaldos de las bases de datos en necesario que tengamos los permisos necesarios.
+Para poder generar los respaldos de las bases de datos en necesario que nuestro usuario tenga los permisos necesarios.  
   
-  1. 
-
+  * En caso de no tener un usuario , hay que crearlo con los permisos necesarios
+  ```CREATE ROLE <user> WITH LOGIN SUPERUSER CREATEROLE CREATEDB PASSWORD '<password>' VALID UNTIL 'infinity';  ```
+  
+  * Si el usuario no tiene los permisos entonces hay que asignarselos
+  ```ALTER ROLE borrar WITH LOGIN SUPERUSER CREATEROLE CREATEDB VALID UNTIL 'infinity'; ```  
+  
 ## Lista de archivos a respaldar
 
 A continuación listamos una serie de carpetas que contienen los archivos que necesitamos:
