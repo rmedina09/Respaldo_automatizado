@@ -20,11 +20,13 @@ __Creamos alias al servidor remoto__
    User user  
    Port xxxx  
    ```  
-   2. Creamos nuestras credenciales para poder ingresar al servidor sin la necesidad de autenticarnos  
+   2. Creamos nuestras credenciales para poder ingresar al servidor sin la necesidad de autenticarnos explicitamente  
   ```ssh-keygen -b 4096 -t rsa ```  
-  nos genera dos llaves 
-  Copiamos nuestra llave pública al servidor remoto OWGIS
-  ```ssh-copy-id user@servidor_OWGIS```
+  nos genera una llave privada ```id_rsa``` y una llave publica ```id_rsa.pub```  
+  
+  Copiamos la llave pública al servidor remoto OWGIS
+  ```ssh-copy-id  -i  ~/.ssh/id_rsa.pub  user@servidor_OWGIS```
+  
   
    
    
