@@ -18,8 +18,13 @@ __Creamos alias al servidor remoto__
    Host servidor_OWGIS  
    HostName 132.248.xxx.xxx  
    User user  
-   Port 5543  
+   Port xxxx  
    ```  
-   
+   2. Creamos nuestras credenciales para poder ingresar al servidor sin la necesidad de autenticarnos  
+  ```ssh-keygen -b 4096 -t rsa ```  
+  nos genera dos llaves 
+  Copiamos nuestra llave pública al servidor remoto OWGIS
+  ```ssh-copy-id user@servidor_OWGIS```
+  
    
    
