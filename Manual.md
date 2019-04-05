@@ -6,7 +6,7 @@ remoto OWGIS desde nuestro equipo local.
 ## Requerimientos Técnicos
    * Sistemas operativo Ubuntu
    * Lenguaje __bash__
-   * Herramienta __RSYNC__  
+   * Herramienta __rsync__  
 
 ## Configuración del ambiente
 Se debe tener una serie de configuraciones previas que nos permitiran hacer los respaldos de los archivos de manera  
@@ -39,6 +39,20 @@ Para poder generar los respaldos de las bases de datos en necesario que nuestro 
   * Si el usuario no tiene los permisos entonces hay que asignarselos
   ```ALTER ROLE borrar WITH LOGIN SUPERUSER CREATEROLE CREATEDB VALID UNTIL 'infinity'; ```  
   
+__Crear un cronjob que genere los archivos de respaldos .sql
+
+Esto se hace para que despues con ```rsync``` respaldemos la carpeta en donde se encuantran los *archivos backup*  
+de las diferentes bases de datos.  
+Enonces en un archivo ```.sh``` ponemos lo siguiente:
+
+  ``` #!/bin/sh 
+      pg_dump -v -h <host> -d <base_datos_1> -f /$PATH/respaldos/BasesDatos/<base_datos_backup_1.sql>
+      pg_dump -v -h <host> -d <base_datos_2> -f /$PATH/respaldos/BasesDatos/<base_datos_backup_2.sql>
+      .
+      .
+      .
+  ```
+
 ## Lista de archivos a respaldar
 
 A continuación listamos una serie de carpetas que contienen los archivos que necesitamos:
@@ -73,7 +87,9 @@ Estas son las bases de datos que vamos a respaldar que se encuentran en ```home/
   * pumabus
   * viajandodf
  
- ## Descripción del Código
+ ## Descripción de los scripts
+ 
+ ___
    
    
   
