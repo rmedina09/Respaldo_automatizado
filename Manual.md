@@ -123,6 +123,3 @@ Estas son las bases de datos que vamos a respaldar que se encuentran en ```home/
  /$PATH_HOME/<carpeta_respaldo>/<carpeta_owgis_config>
  ```
  
-  
-   
-   
