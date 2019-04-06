@@ -91,6 +91,12 @@ Estas son las bases de datos que vamos a respaldar que se encuentran en ```home/
   * pumabus
   * viajandodf
  
+ ## Lista de archivos a respaldar
+ 
+ Estas carpetas contienen los archivos que no deseamos respaldar:
+ 
+  * ServerScripts/LYDAR/images
+
  ## Descripción del script
  ```
  rsync -avtbr -e 'ssh' --rsync-path='sudo rsync' --files-from='/$PATH/archivos_a_respaldar.txt'  
@@ -98,7 +104,7 @@ Estas son las bases de datos que vamos a respaldar que se encuentran en ```home/
        <alias_servidor>:/  /$PATH_HOME/<carpeta_respaldo>
  ```
 
-Respaldamos los archivos *backup* de las bases de datos.  
+ Respaldamos los archivos *backup* de las bases de datos.  
 
  ```
  rsync -avtbr --delete-excluded --filter='protect <carpeta_respaldo>*' <alias_servidor>:/$PATH/respaldos/BasesDatos  
