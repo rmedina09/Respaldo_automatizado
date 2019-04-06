@@ -55,6 +55,8 @@ Enonces en un archivo ```.sh``` ponemos lo siguiente:
       .
   ```
 
+Solo faltaria agregar nuestro script ```.sh``` a nuestro __cron__  
+
 ## Lista de archivos a respaldar
 
 A continuación listamos una serie de carpetas que contienen los archivos que necesitamos:
@@ -89,7 +91,9 @@ Estas son las bases de datos que vamos a respaldar que se encuentran en ```home/
   * pumabus
   * viajandodf
  
- ## Descripción de los scripts
+ ## Descripción del script
+ 
+ 
  
  ___
    
