@@ -16,7 +16,7 @@ __Creamos un alias del servidor remoto__
 
    1. Ingresamos al archivo `.ssh/config` para crear el alias de nuestro servidor  
       ```bash
-      Host servidor_OWGIS  
+      Host <servidor>  
       HostName 132.248.xxx.xxx  
       User user  
       Port xxxx  
@@ -26,7 +26,7 @@ __Creamos un alias del servidor remoto__
       ```ssh-keygen -b 4096 -t rsa```  
       
       Despues de generar as llaves, copiamos la llave pública al servidor remoto OWGIS:  
-      ```ssh-copy-id  -i  ~/.ssh/id_rsa.pub  user@servidor_OWGIS```  
+      ```ssh-copy-id  -i  ~/.ssh/id_rsa.pub  user@servidor```  
       
    Ahora ya podremos ejecutar el script sin la necesidad de autenticarnos explicitamente.
 
@@ -92,8 +92,19 @@ Estas son las bases de datos que vamos a respaldar que se encuentran en ```home/
   * viajandodf
  
  ## Descripción del script
- 
- 
+ ```
+ __rsync__ -avtbr -e 'ssh' --rsync-path='sudo rsync' --files-from='/$PATH/archivos_a_respaldar.txt'  
+           --exclude-from='/$PATH/archivos_a_omitir.txt' --delete-excluded --filter='protect respaldo_*'  
+           $SERVIDOR:/  /$PATH_RESPALDOS/<carpeta_respaldo>
+ ```
+
+ ```
+ rsync -avtbr --delete-excluded --filter='protect respaldo_*' servidor_OWGIS:/home/raul/respaldos/BasesDatos  
+ /home/rmedina/RESPALDOS/respaldo_ACTUAL
+ ```
+#Respaldamos los archivos de configuracion del ncWMS para el OWGIS
+rsync -avtbr --delete-excluded --min-size=100k --filter='protect respaldo_*' servidor_OWGIS:/usr/local/owgisconfig/ncwms/config.xml /home/rmedina/RESPALDOS/respaldo_ACTUAL/ncwms_config
+rsync -avtbr --delete-excluded --filter='protect respaldo_*' servidor_OWGIS:/usr/local/owgisconfig/ncwms/palettes /home/rmedina/RESPALDOS/respaldo_ACTUAL/ncwms_config
  
  ___
    
