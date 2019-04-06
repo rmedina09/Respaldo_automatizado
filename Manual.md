@@ -93,9 +93,9 @@ Estas son las bases de datos que vamos a respaldar que se encuentran en ```home/
  
  ## Descripción del script
  ```
- __rsync__ -avtbr -e 'ssh' --rsync-path='sudo rsync' --files-from='/$PATH/archivos_a_respaldar.txt'  
-           --exclude-from='/$PATH/archivos_a_omitir.txt' --delete-excluded --filter='protect respaldo_*'  
-           $SERVIDOR:/  /$PATH_RESPALDOS/<carpeta_respaldo>
+ rsync -avtbr -e 'ssh' --rsync-path='sudo rsync' --files-from='/$PATH/archivos_a_respaldar.txt'  
+       --exclude-from='/$PATH/archivos_a_omitir.txt' --delete-excluded --filter='protect <carpeta_respaldo>*'  
+       $SERVIDOR:/  /$PATH_RESPALDOS/<carpeta_respaldo>
  ```
 
  ```
