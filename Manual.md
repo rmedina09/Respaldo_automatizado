@@ -95,21 +95,28 @@ Estas son las bases de datos que vamos a respaldar que se encuentran en ```home/
  ```
  rsync -avtbr -e 'ssh' --rsync-path='sudo rsync' --files-from='/$PATH/archivos_a_respaldar.txt'  
        --exclude-from='/$PATH/archivos_a_omitir.txt' --delete-excluded --filter='protect <carpeta_respaldo>*'  
-       $SERVIDOR:/  /$PATH_HOME_RESPALDOS/<carpeta_respaldo>
+       <alias_servidor>:/  /$PATH_HOME/<carpeta_respaldo>
  ```
 
-Respaldamos los archivos ~~~backup~~~ de las bases de datos.
+Respaldamos los archivos *backup* de las bases de datos.  
+
  ```
- rsync -avtbr --delete-excluded --filter='protect <carpeta_respaldo>*' $SERVIDOR:/$PATH/respaldos/BasesDatos  
- /home/rmedina/RESPALDOS/respaldo_ACTUAL
+ rsync -avtbr --delete-excluded --filter='protect <carpeta_respaldo>*' <alias_servidor>:/$PATH/respaldos/BasesDatos  
+ /$PATH_HOME/<carpeta_respaldo>
  ```
-#Respaldamos los archivos de configuracion del ncWMS para el OWGIS
-rsync -avtbr --delete-excluded --min-size=100k --filter='protect respaldo_*' servidor_OWGIS:/usr/local/owgisconfig/ncwms/config.xml /home/rmedina/RESPALDOS/respaldo_ACTUAL/ncwms_config
-rsync -avtbr --delete-excluded --filter='protect respaldo_*' servidor_OWGIS:/usr/local/owgisconfig/ncwms/palettes /home/rmedina/RESPALDOS/respaldo_ACTUAL/ncwms_config
  
- ___
-   
-   
+ Respaldamos los archuivos del servidor ncWMS 
+ ```
+ rsync -avtbr --delete-excluded --min-size=100k --filter='protect respaldo_*' 
+ <alias_servidor>:/$PATH/owgisconfig/ncwms/config.xml  /$PATH_HOME/<carpeta_respaldo>/<carpeta_owgis_config>
+ ```
+ 
+ Respaldamos las paletas de colores
+ ```
+ rsync -avtbr --delete-excluded --filter='protect respaldo_*' <alias_servidor>:/$PATH/owgisconfig/ncwms/palettes  
+ /$PATH_HOME/<carpeta_respaldo>/<carpeta_owgis_config>
+ ```
+ 
   
    
    
