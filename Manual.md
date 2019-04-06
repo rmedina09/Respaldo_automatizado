@@ -16,7 +16,7 @@ __Creamos un alias del servidor remoto__
 
    1. Ingresamos al archivo `.ssh/config` para crear el alias de nuestro servidor  
       ```bash
-      Host <servidor>  
+      Host <servidor>
       HostName 132.248.xxx.xxx  
       User user  
       Port xxxx  
@@ -95,11 +95,12 @@ Estas son las bases de datos que vamos a respaldar que se encuentran en ```home/
  ```
  rsync -avtbr -e 'ssh' --rsync-path='sudo rsync' --files-from='/$PATH/archivos_a_respaldar.txt'  
        --exclude-from='/$PATH/archivos_a_omitir.txt' --delete-excluded --filter='protect <carpeta_respaldo>*'  
-       $SERVIDOR:/  /$PATH_RESPALDOS/<carpeta_respaldo>
+       $SERVIDOR:/  /$PATH_HOME_RESPALDOS/<carpeta_respaldo>
  ```
 
+Respaldamos los archivos ~~~backup~~~ de las bases de datos.
  ```
- rsync -avtbr --delete-excluded --filter='protect respaldo_*' servidor_OWGIS:/home/raul/respaldos/BasesDatos  
+ rsync -avtbr --delete-excluded --filter='protect <carpeta_respaldo>*' $SERVIDOR:/$PATH/respaldos/BasesDatos  
  /home/rmedina/RESPALDOS/respaldo_ACTUAL
  ```
 #Respaldamos los archivos de configuracion del ncWMS para el OWGIS
